@@ -18,13 +18,13 @@ class ProjectTestCase(unittest.TestCase):
     def tearDown(self):
         pass  # os.unlink(self.app.config['DATABASE'])
 
-
     {%- if cookiecutter.application_root != '/' %}
+
     def test_home(self):
         response = self.client.get('/')
         self.assertEqual(404, response.status_code)
+
     {% endif -%}
-    
 
     def test_healthcheck(self):
         response = self.client.get('/healthcheck')
