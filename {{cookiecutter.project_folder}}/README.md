@@ -42,7 +42,9 @@ For a more in-depth explanation please refer to  the [official documentation](ht
 
 ## Run your python script
 ```bash
-python manage.py runserver
+export FLASK_APP=manage.py
+export FLASK_ENV=development
+python manage.py run
 ```
 
 
@@ -87,7 +89,7 @@ https://microservices-scaffold.readthedocs.io/en/latest/
 You can dockerize this microservice with these steps:
 * Create and push the image
 
-    docker build -t films -f Dockerfile .
+    docker build -t [image_name[:optional_tag]] -f Dockerfile .
 * Run the image:
 
-    docker run -d -p 5000:5000 films
+    docker run -d -p 5000:5000 [image_name]
