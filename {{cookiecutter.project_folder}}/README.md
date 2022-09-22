@@ -22,7 +22,7 @@ microservices with Python which handles cross-cutting concerns:
 
 ### Install with virtualenv
 ```bash
-virtualenv --python=python[3.6|3.7|3.8] venv
+virtualenv --python=python[3.7|3.8] venv
 source venv/bin/activate
 pip install -r requirements.txt
 ```
