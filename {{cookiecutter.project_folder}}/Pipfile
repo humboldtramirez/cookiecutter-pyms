@@ -6,11 +6,11 @@ name = "pypi"
 [packages]
 Flask-SQLAlchemy = "==2.4.4"
 SQLAlchemy = "==1.4.3"
-Flask-Script = "==2.0.6"
-py-ms = {extras = ["all"],version = "==2.7.0"}
+pyms = {extras = ["all"],git = "https://github.com/humboldtramirez/pyms.git", editable = true, ref = "master"} # fork supporting Flask 2.0
 marshmallow = "==3.8.0"
 marshmallow-sqlalchemy = ">=0.24.2"
-importlib-metadata = "==2.1.1"
+importlib-metadata = ">2.1.1" # resolve TypeError: entry_points() got an unexpected keyword argument 'group'
+werkzeug = "==2.0.0" # downgrade to resolve "KeyError: 'WERKZEUG_SERVER_FD'"
 
 [dev-packages]
 requests-mock = "*"

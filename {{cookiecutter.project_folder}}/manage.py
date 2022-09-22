@@ -1,11 +1,11 @@
 # encoding: utf-8
-from flask_script import Manager
+from flask.cli import FlaskGroup
 
 from project.app import create_app
 
 app = create_app()
 
-manager = Manager(app)
+cli = FlaskGroup(app)
 
 if __name__ == '__main__':
-    manager.run()
+    cli()
