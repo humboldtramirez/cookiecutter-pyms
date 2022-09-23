@@ -30,14 +30,14 @@ setup(
         "License :: OSI Approved :: GPL License",
         "Operating System :: OS Independent",
         "Programming Language :: Python",
-        "Programming Language :: Python :: 3.5",
-        "Programming Language :: Python :: 3.6"
+        "Programming Language :: Python :: 3.7",
+        "Programming Language :: Python :: 3.8"
     ],
-    python_requires='>=3.5',
+    python_requires='>=3.7',
     license="GPLv3",
     platforms=["any"],
     keywords="python, microservices",
-    url='https://github.com/python-microservices/microservices-scaffold',
+    url='{{ cookiecutter.project_repo_url }}',
     test_suite='nose.collector',
     packages=find_packages(),
     include_package_data=True,
