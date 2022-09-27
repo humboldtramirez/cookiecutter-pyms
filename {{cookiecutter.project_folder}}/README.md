@@ -1,6 +1,6 @@
 # microservices-scaffold
 Python Microservice Scaffold is an example of how to structure a Flask Microservice Project.
-This Scaffold is build over [PyMS](https://github.com/python-microservices/pyms) package. PyMS is a [Microservice chassis pattern](https://microservices.io/patterns/microservice-chassis.html)
+This scaffold is built over [PyMS](https://github.com/python-microservices/pyms) package. PyMS is a [Microservice chassis pattern](https://microservices.io/patterns/microservice-chassis.html)
 like Spring Boot (Java) or Gizmo (Golang). PyMS is a collection of libraries, best practices and recommended ways to build
 microservices with Python which handles cross-cutting concerns:
 - Externalized configuration
@@ -22,7 +22,7 @@ microservices with Python which handles cross-cutting concerns:
 
 ### Install with virtualenv
 ```bash
-virtualenv --python=python[3.6|3.7|3.8] venv
+virtualenv --python=python[3.7|3.8] venv
 source venv/bin/activate
 pip install -r requirements.txt
 ```
@@ -42,7 +42,9 @@ For a more in-depth explanation please refer to  the [official documentation](ht
 
 ## Run your python script
 ```bash
-python manage.py runserver
+export FLASK_APP=manage.py
+export FLASK_ENV=development
+python manage.py run
 ```
 
 
@@ -50,7 +52,7 @@ python manage.py runserver
 
 Your default endpoints will be in this url:
 ```bash
-http://127.0.0.1:5000/[APPLICATION_ROOT]/
+http://127.0.0.1:5000/{{ cookiecutter.project_folder }}/
 ```
 
 This URL is set in your `config.yml`:
@@ -61,12 +63,12 @@ pyms:
     DEBUG: false
     TESTING: false
     APP_NAME: Template
-    APPLICATION_ROOT : "" # <!---
+    APPLICATION_ROOT : /{{ cookiecutter.project_folder }} # <!---
 ```
 
-You can acceded to a [swagger ui](https://swagger.io/tools/swagger-ui/) in the next url:
+You can access a [swagger ui](https://swagger.io/tools/swagger-ui/) in the next url:
 ```bash
-http://127.0.0.1:5000/[APPLICATION_ROOT]/ui/
+http://127.0.0.1:5000/{{ cookiecutter.project_folder }}/ui/
 ```
 
 This PATH is set in your `config.yml`:
@@ -87,7 +89,7 @@ https://microservices-scaffold.readthedocs.io/en/latest/
 You can dockerize this microservice with these steps:
 * Create and push the image
 
-    docker build -t films -f Dockerfile .
+    docker build -t {{ cookiecutter.project_folder }} -f Dockerfile .
 * Run the image:
 
-    docker run -d -p 5000:5000 films
+    docker run -d -p 5000:5000 {{ cookiecutter.project_folder }}

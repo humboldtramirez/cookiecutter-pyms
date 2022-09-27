@@ -1,7 +1,7 @@
 ---
 swagger: "2.0"
 info:
-  description: "This is a sample server {{cookiecutter.project_name}} server."
+  description: "This is a sample {{cookiecutter.project_name}} server."
   version: "1.0.0"
   title: "Swagger {{cookiecutter.project_name}}"
   termsOfService: "http://swagger.io/terms/"

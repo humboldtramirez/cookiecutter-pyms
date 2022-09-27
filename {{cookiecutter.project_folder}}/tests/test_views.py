@@ -3,7 +3,6 @@ import os
 import unittest
 from project.app import MyMicroservice
 from pyms.constants import CONFIGMAP_FILE_ENVIRONMENT
-from typing import Dict, List, Union, Text
 
 
 class ProjectTestCase(unittest.TestCase):
@@ -20,11 +19,13 @@ class ProjectTestCase(unittest.TestCase):
         pass  # os.unlink(self.app.config['DATABASE'])
 
     {%- if cookiecutter.application_root != '/' %}
+
     def test_home(self):
         response = self.client.get('/')
         self.assertEqual(404, response.status_code)
+
     {% endif -%}
-    
+
     def test_healthcheck(self):
         response = self.client.get('/healthcheck')
         self.assertEqual(200, response.status_code)
