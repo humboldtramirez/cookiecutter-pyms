@@ -42,9 +42,7 @@ For a more in-depth explanation please refer to  the [official documentation](ht
 
 ## Run your python script
 ```bash
-export FLASK_APP=manage.py
-export FLASK_ENV=development
-python manage.py run
+python manage.py runserver
 ```
 
 
