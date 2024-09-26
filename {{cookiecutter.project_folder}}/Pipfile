@@ -7,7 +7,7 @@ name = "pypi"
 Flask = "<2.0"
 markupsafe = "==2.0.1"
 openapi-spec-validator = "<0.5.0"
-Flask-SQLAlchemy = ">=2.5"
+Flask-SQLAlchemy = "<3.0"
 SQLAlchemy = "==1.4.3"
 Flask-Script = "==2.0.6"
 py-ms = {extras = ["all"],version = "==2.7.0"}
